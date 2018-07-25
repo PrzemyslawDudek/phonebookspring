@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Dodaj nowy numer</title>
+</head>
+<body>
+
+    <div style="text-align: center;">
+        <h1 th:if="${errorInfo != null}" th:text="${errorInfo}"></h1>
+        <form action="/addnumber" method="post" th:object="${phoneBookForm}">
+           Podaj imię: <input type="text" th:field="*{name}"><br>
+           Podaj nazwisko:  <input type="text" th:field="*{surname}"><br>
+           Podaj numer:  <input type="text" th.field="*{number}"><br>
+            <input type="submit" value="dodaj">
+        </form>
+    </div>
+
+</body>
+</html>
