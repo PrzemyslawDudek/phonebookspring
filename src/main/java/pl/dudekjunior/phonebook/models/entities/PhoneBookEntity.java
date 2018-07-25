@@ -13,5 +13,5 @@ public class PhoneBookEntity {
     private int id;
     private String name;
     private String surname;
-    private String number;
+    private int number;
 }
