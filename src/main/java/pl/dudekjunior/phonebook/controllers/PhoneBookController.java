@@ -28,16 +28,16 @@ public class PhoneBookController {
     @PostMapping("/addnumber")
     public String addNumber(@ModelAttribute("phoneBookForm") PhoneBookForm phoneBookForm,
                             Model model){
-        if(phoneBookService.tryToAddNumber(phoneBookForm)){
+        if(!phoneBookService.tryToAddNumber(phoneBookForm)){
             model.addAttribute("errorInfo", "Istnieje kontakt z takim numerem");
             return "addnumber";
         }
         model.addAttribute("addNumber", "Dodano poprawenie numer");
-        return "addnumber";
-    }
-
-    @GetMapping("/phonebook")
-    public String showPhoneBook(Model model){
         return "phonebook";
     }
+
+//    @GetMapping("/phonebook")
+//    public String showPhoneBook(Model model){
+//        return "phonebook";
+//    }
 }

@@ -21,8 +21,8 @@ public class PhoneBookService {
             return false;
         }
 
-//        PhoneBookEntity phoneBookEntity = createPhoneBookEntity(phoneBookForm);
-//        phoneBookRepository.save(phoneBookEntity);
+        PhoneBookEntity phoneBookEntity = createPhoneBookEntity(phoneBookForm);
+        phoneBookRepository.save(phoneBookEntity);
         return true;
     }
 

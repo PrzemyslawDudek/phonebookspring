@@ -8,6 +8,7 @@
 
     <div style="text-align: center;">
         <h1 th:if="${errorInfo != null}" th:text="${errorInfo}"></h1>
+
         <form action="/addnumber" method="post" th:object="${phoneBookForm}">
            Podaj imię: <input type="text" th:field="*{name}"><br>
            Podaj nazwisko:  <input type="text" th:field="*{surname}"><br>
