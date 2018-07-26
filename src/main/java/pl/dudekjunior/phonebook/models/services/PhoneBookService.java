@@ -16,7 +16,7 @@ public class PhoneBookService {
     public PhoneBookService(PhoneBookRepository phoneBookRepository){
         this.phoneBookRepository = phoneBookRepository;
     }
-    
+
     public boolean tryToAddNumber(PhoneBookForm phoneBookForm){
         if(phoneBookRepository.existsByNumber(phoneBookForm.getNumber())){
             return false;
@@ -35,4 +35,11 @@ public class PhoneBookService {
         return phoneBookEntity;
     }
 
+    public Iterable<PhoneBookEntity> getAllNumbers() {
+        return phoneBookRepository.findAll();
+    }
+
+    public PhoneBookEntity getPhoneBookEntity(int id){
+        return phoneBookRepository.findById(id).get();
+    }
 }

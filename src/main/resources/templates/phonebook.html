@@ -9,6 +9,13 @@
     <div>
         <h1>Książka Telefoniczna</h1>
         <h1 th:if="${addNumber != null}" th:text="${addNumber}"></h1>
+        <p><a href="/addnumber">Dodaj nowy numer</a></p>
+        <p>Wszystkie numery: </p>
+        <div th:each="number : ${numbers}">
+            <a th:href="'/shownumber/' + ${number.getId()}">
+                <span th:text="${number.getNumber()}"></span>
+            </a>
+        </div>
     </div>
 
 </body>
