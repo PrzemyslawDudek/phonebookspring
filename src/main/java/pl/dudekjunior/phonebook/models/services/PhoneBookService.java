@@ -2,6 +2,7 @@ package pl.dudekjunior.phonebook.models.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
 import pl.dudekjunior.phonebook.models.entities.PhoneBookEntity;
 import pl.dudekjunior.phonebook.models.forms.PhoneBookForm;
 import pl.dudekjunior.phonebook.models.repositories.PhoneBookRepository;
@@ -15,7 +16,7 @@ public class PhoneBookService {
     public PhoneBookService(PhoneBookRepository phoneBookRepository){
         this.phoneBookRepository = phoneBookRepository;
     }
-
+    
     public boolean tryToAddNumber(PhoneBookForm phoneBookForm){
         if(phoneBookRepository.existsByNumber(phoneBookForm.getNumber())){
             return false;

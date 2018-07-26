@@ -7,5 +7,5 @@ import pl.dudekjunior.phonebook.models.entities.PhoneBookEntity;
 
 @Repository
 public interface PhoneBookRepository extends CrudRepository<PhoneBookEntity, Integer> {
-    boolean existsByNumber(int number);
+    boolean existsByNumber(String number);
 }
